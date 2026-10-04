@@ -1,0 +1,14 @@
+# Captures and images are data, not source. Keep them out of git until a
+# deliberate decision is made about which ones are worth versioning.
+captures/*
+!captures/.gitkeep
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+*.jpg
+*.jpeg
+*.png
+*.heic
