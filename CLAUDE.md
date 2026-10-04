@@ -49,14 +49,15 @@ From `../leaf_inverter_rotation/docs/jackery_300_plus.md` §9–§13. Each cost 
    observation: 81% at 22:44 → 85% at 04:46, nothing touched. Resume threshold bounded only
    as ≤ 81%.
 
-4. **The app is a dead control path.** Every connection attempt ends in a "connecting
-   Bluetooth" timeout. The unit answers ping on the LAN (192.168.1.65) but appears to want
-   Bluetooth for control and to disable Bluetooth once Wi-Fi is up — a deadlock. Its Wi-Fi
-   goes to Jackery's cloud, which is gone in an outage anyway.
+4. **The app was a dead control path; as of 2026-10-04 it works again.** Every connection
+   attempt used to end in a "connecting Bluetooth" timeout. On 2026-10-04 the app connected
+   and toggled settings normally. Ron suspects a power cycle of the Jackery cleared it — not
+   tried before because the unit was in use. Its Wi-Fi goes to Jackery's cloud, which is
+   gone in an outage anyway, so the app is for setup, not for reading during an outage.
 
-5. **Therefore the Screen timeout setting is currently unreachable.** The app offers
-   2 hr / 2 m / Off. Which is set is unknown. **This is the blocking unknown for the whole
-   approach** — see Open questions.
+5. **The Screen timeout setting should now be reachable through the app.** The app offers
+   2 hr / 2 m / Off. Which is set is still unknown. **This is the blocking unknown for the
+   whole approach** — see Open questions.
 
 6. **Battery Save mode:** charging stops at 85%, output cuts at 15%. Usable window 70% ≈
    202 Wh of a 288 Wh pack.
@@ -130,9 +131,15 @@ Blocking, in order:
 
 Design notes, not blocking:
 
-- **Do not power the camera from the USB port you are pressing.** jacktessery's Fingerbot
-  pressed the USB-output button precisely because nothing was on USB — a camera fed from
-  that port would cut its own supply on every wake.
+- **The Pi is powered from the unswitched power strip, with its own adapter — not from the
+  Jackery.** Decided 2026-10-04. The strip also feeds the gateway and other small loads, is
+  never switched by the rotation, and in production arrives on its own extension cord from
+  the basement rig, ending near the fridge cord. This keeps the Pi's draw out of the
+  Jackery's usable window and keeps the Jackery's USB output off, as Ron runs it in outages.
+  It also sidesteps two traps: a camera fed from the USB port it presses would cut its own
+  supply on every wake (jacktessery's Fingerbot pressed the USB button because nothing was
+  on USB), and USB output auto-shuts off after 12 h at ≤ 2 W.
+  Optional: a Kill A Watt in front of the Pi's adapter would give the standing cost.
 - Rigid mounting is load-bearing: if the camera shifts, every region of interest breaks.
 - A shroud is needed against glare on the panel.
 - Ron has hobby servos. A bracket the Jackery sits in is preferred over anything glued to
