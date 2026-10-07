@@ -36,3 +36,29 @@ the main power button together until the icon goes out (off) or lights (on).
 
 Open, not stated in the manual: whether the 12 hours must be continuous below threshold
 (so each fridge compressor run restarts the count) or is counted some other way.
+
+## 2026-10-07 — charging seen by the Pi camera (bench run, one frame a minute)
+
+Jackery plugged into the wall at ~14:08, no load on any output, Battery Save on.
+
+| time | SOC | input | under input | time-to-empty field |
+|---|---|---|---|---|
+| 14:14 | 81% | 0W | — | 45.5H |
+| 14:15 | 80% | 200W | 0.4H | 99.9H |
+| 14:16 | 81% | 206W | 0.4H | 99.9H |
+| 14:17 | 82% | 207W | 0.4H | 99.9H |
+| 14:18 | 83% | 207W | 0.4H | 99.9H |
+| 14:19 | 84% | 206W | 0.4H | 99.9H |
+| 14:20 | 85% | 0W | — | 47.8H |
+
+- **Charging resumed when SOC reached 80%** (Ron predicted ≤ 80%), and stopped at the
+  85% Battery Save ceiling. Tightens the parent project's "resume ≤ 81%" to "at 80%" —
+  one observation.
+- ~205 W input, ~1% per minute; the whole top-up took 5 minutes.
+- **While charging, a time field appears under input (0.4H, time to full) and the
+  time-to-empty field reads 99.9H** — apparently a placeholder, not an estimate. The
+  reader must not treat 99.9H as a real time-to-empty.
+- The top-right voltage read **124V** in charging frames and **120V** in earlier frames
+  that day. What it measures is not established.
+- At 0 W output and 81%, time-to-empty read 45.5H, implying ~5 W standing draw
+  (0.81 × 288 Wh ÷ 45.5 h).
