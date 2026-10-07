@@ -141,6 +141,11 @@ much; two halves that don't quite meet is the main risk of having split the proj
 
 Blocking, in order:
 
+- [ ] **Possible answer, 2026-10-07, being tested:** Ron believes a **double click of the
+      power button puts the screen always on**. A short press wakes it. The screen was
+      still lit ~8 min after a short press at ~13:42, which would rule out the 2-minute
+      setting unless it was re-woken. A 3-hour once-a-minute photo run from 14:09 is
+      checking; result goes here.
 - [ ] **Does the screen stay lit long enough to photograph on a schedule?** Measure the
       current timeout by observation: wake it, note which button, time how long until dark.
       **2 hours** makes a wake actuator a convenience; **2 minutes** makes it the
@@ -161,6 +166,19 @@ Blocking, in order:
       Arducam warns forcing it can damage the module. Test: refocus the v2.1 at ~14 cm and
       closer, and see how close it goes sharp. The display is so small that closer than
       14 cm still fits the frame; the limit is the lens.
+      **Bench result 2026-10-07 (Jackery on the lathe ways, camera in a PanaVise):** with
+      the v2.1 lens turned ~90° counterclockwise by hand (no tool; unscrewing focuses
+      closer, as the forum said; Ron may have scratched the lens doing it), **10 cm is
+      sharp enough to read every field by eye**: display ~1150 px wide (~26 px/mm), SOC
+      digits ~130 px, small digits ~50 px. 15 cm was readable for SOC only; 30 cm soft.
+      Camera settings used: `--rotation 180 --shutter 50000 --gain 4 --awbgains 1.5,1.5`
+      in a dark room (automatic exposure blooms the lit segments into blobs). The white
+      segments read BLUE and the orange ring RED to this camera — use the blue channel.
+      First Tesseract pass with hand-guessed boxes got SOC/input/output right after
+      letter-for-digit fixes; time-to-empty was clipped by a too-tight box. Box tuning is
+      the next job. Photos: `~/run_2026_10_07/` on the Pi.
+      Not yet done: depth-of-field sweep around 10 cm; a printed-text check for the
+      possible scratch.
 - [ ] Standing cost of a lit display. Probably under a watt, but against a 288 Wh pack it is
       worth a number rather than a shrug.
 
