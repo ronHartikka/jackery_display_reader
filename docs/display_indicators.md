@@ -62,3 +62,9 @@ Jackery plugged into the wall at ~14:08, no load on any output, Battery Save on.
   that day. What it measures is not established.
 - At 0 W output and 81%, time-to-empty read 45.5H, implying ~5 W standing draw
   (0.81 × 288 Wh ÷ 45.5 h).
+
+## Screen always-on (2026-10-07)
+
+A double click of the power button keeps the screen lit. Checked by photographing the
+panel once a minute from 14:09 to 17:08 after a double click: lit in all 180 frames, longer
+than the app's 2-hour timeout. One run; whether it survives a power cut is not known.
