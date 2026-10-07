@@ -105,8 +105,10 @@ transfer nothing but the method.
   64-bit. Hostname `camera`, user `pi`, at 192.168.1.217 on Wi-Fi (address from DHCP, not
   reserved). SSH is key-only, with Ron's Mac key. First boot showed "Failed to start
   userconfig.service" once; the `pi` user and sudo work and no units are failed, so it
-  was harmless. Camera (v2.1) unplugged and bagged. Nothing installed yet beyond the base
-  image. The card's previous contents (2023 picamera2 tutorial scripts and test images)
+  was harmless. Camera (v2.1) unplugged and bagged. `sudo` asks for Ron's password (not
+  passwordless). **2026-10-07:** Tesseract 5.5.0 and Pillow 11.1.0 from apt; `7seg` and
+  `ssd_alphanum_plus` models in `~/tessdata`. The phone-photo test reads the same as on
+  the Mac (85, 53W, 3.3H, OW) at **about 0.4 s per field** with `7seg`. The card's previous contents (2023 picamera2 tutorial scripts and test images)
   are in `captures/old_camera_card_2023/`.
 - **SD cards:** the Pi 3B's card is the one above. A second good card holds Raspberry Pi
   OS from 2021 (Buster, desktop, HDMI forced to 1080p) — contents not inspected. A third
