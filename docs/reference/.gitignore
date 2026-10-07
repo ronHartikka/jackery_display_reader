@@ -1,0 +1,8 @@
+# Manufacturer manuals, datasheets and saved web pages are copyrighted — keep them LOCAL.
+# List them (with a link) in README.md instead of committing the files.
+# Same convention as ../../../leaf_inverter_rotation/docs/reference/.
+*
+!.gitignore
+!README.md
+# The Jackery manual here is a symlink into the parent project, not a copy; tracked.
+!Jackery Explorer 300 Plus Portable Power Station User Manual-.pdf

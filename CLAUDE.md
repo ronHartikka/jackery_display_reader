@@ -86,6 +86,18 @@ API. Read 2026-09-30; worth knowing in detail because it works.
 Region-of-interest coordinates are per-model and per-mounting. The 1000 Pro's numbers
 transfer nothing but the method.
 
+### Looked at, not adopted
+
+- **`SachaIZADI/Seven-Segment-OCR`** (read 2026-10-06). A 2018 class project reading
+  fuel-pump displays from ~850 handheld phone photos with trained neural networks. Its
+  hard problem — finding the screen in a hand-held photo — does not exist with a fixed
+  camera; it needs hundreds of labelled images and a machine learning stack on the Pi; its
+  "how to reproduce" section is unfinished. Tesseract already read the fields.
+- **If Tesseract fails on Pi camera images**, the next thing to try is not a trained model
+  but checking each segment's fixed pixel position for lit/unlit and looking up the digit
+  — possible only because the camera is fixed. `ssocr`
+  (https://www.unix-ag.uni-kl.de/~auerswal/ssocr/) is an existing tool for this; untried.
+
 ## Hardware on hand
 
 - **RPi 3B v1.2** — the intended host. Onboard Wi-Fi, quad-core, 1 GB, CSI connector clear.
@@ -93,8 +105,14 @@ transfer nothing but the method.
   it cleanly is unchecked.
 - 2 × Model B Rev 2 (2012) — ARMv6, 512 MB, no Wi-Fi. Have CSI but are the wrong end of the
   range for Tesseract.
-- 5 further Pis, unidentified. Worth identifying — a Zero W would be the better long-term
-  form factor on top of a fridge.
+- 1 × Model B Rev 1 — identified 2026-10-06 and labelled on its Ethernet jack: board
+  printed only "Raspberry Pi (c)2011", has Ethernet, no mounting holes. 256 MB, ARMv6, no
+  Wi-Fi. Not a candidate host.
+- 4 further Pis, unidentified. Worth identifying — a Zero 2 W would be the better long-term
+  form factor in the box (needs the narrower camera ribbon).
+  How to tell the 2012-era boards apart: printed "(c)2011" or "(c)2011.12" only; no
+  Ethernet = Model A; Ethernet and no mounting holes = Model B Rev 1; Ethernet and two
+  mounting holes = Model B Rev 2.
 - **Camera Module v1.3** (OV5647, 5 MP) and **v2.1** (IMX219, 8 MP). Both fixed focus.
 - A cobbler.
 
@@ -140,6 +158,25 @@ Design notes, not blocking:
   supply on every wake (jacktessery's Fingerbot pressed the USB button because nothing was
   on USB), and USB output auto-shuts off after 12 h at ≤ 2 W.
   Optional: a Kill A Watt in front of the Pi's adapter would give the standing cost.
+- **Watch for changes, not only poll SOC** (Ron, 2026-10-04). Frame comparison per region
+  is far cheaper than OCR, so the Pi can watch at a few frames a second and OCR only what
+  changed. (3B throughput not measured.) Changes worth catching, most important first:
+  1. Output to 0 / AC indicator out — the 15% cutoff or 12 h auto-off actually happening,
+     i.e. the fridge dropped. Alarm within seconds instead of finding out later.
+  2. Input appearing or disappearing — charger resumed or stopped; pins down the resume
+     threshold, bounded only as ≤ 81%.
+  3. Output stepping up and down — compressor starts and stops, giving fridge duty cycle,
+     which the rig's current sensor cannot see.
+  4. Screen going dark — the reader's own problem: wake it or flag the gap.
+  5. Anything unexpected (new icon, unreadable field) — save the frame for a person.
+  Depends on the screen staying lit; see the timeout question.
+- **Enclosure** (Ron, 2026-10-04): the Jackery and camera in a light-tight, fan-ventilated
+  box of thin plywood. Self-lit display in the dark gives constant lighting and no glare.
+  Internal heat ≈ 0.3 × output + 5 W from the inherited draw fit (~21 W at 53 W output),
+  plus unmeasured charging loss; align box airflow with the Jackery's own vents; light-tight
+  vents via black-painted baffles. Non-metal skin so Wi-Fi/Bluetooth still reach the unit.
+  **Outside display:** first a web page served by the Pi (phone on the LAN), then a small
+  screen on the box showing the latest raw photo of the panel.
 - Rigid mounting is load-bearing: if the camera shifts, every region of interest breaks.
 - A shroud is needed against glare on the panel.
 - Ron has hobby servos. A bracket the Jackery sits in is preferred over anything glued to
