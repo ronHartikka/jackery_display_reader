@@ -176,8 +176,10 @@ Blocking, in order:
       in a dark room (automatic exposure blooms the lit segments into blobs). The white
       segments read BLUE and the orange ring RED to this camera — use the blue channel.
       First Tesseract pass with hand-guessed boxes got SOC/input/output right after
-      letter-for-digit fixes; time-to-empty was clipped by a too-tight box. Box tuning is
-      the next job. Photos: `~/run_2026_10_07/` on the Pi.
+      letter-for-digit fixes; time-to-empty was clipped by a too-tight box. Boxes now
+      tuned (`src/read_fields.py`); over the run's 180 frames SOC was right in all 180,
+      time-to-empty wrong in 19 (8 read as 9). See `docs/ocr_results.md`.
+      Photos: `~/run_2026_10_07/` on the Pi.
       Not yet done: depth-of-field sweep around 10 cm; a printed-text check for the
       possible scratch.
 - [ ] Standing cost of a lit display. Probably under a watt, but against a 288 Wh pack it is
