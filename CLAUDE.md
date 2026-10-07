@@ -101,6 +101,16 @@ transfer nothing but the method.
 ## Hardware on hand
 
 - **RPi 3B v1.2** — the intended host. Onboard Wi-Fi, quad-core, 1 GB, CSI connector clear.
+  **State as of 2026-10-06:** reflashed with Raspberry Pi OS Lite, Debian 13 (trixie),
+  64-bit. Hostname `camera`, user `pi`, at 192.168.1.217 on Wi-Fi (address from DHCP, not
+  reserved). SSH is key-only, with Ron's Mac key. First boot showed "Failed to start
+  userconfig.service" once; the `pi` user and sudo work and no units are failed, so it
+  was harmless. Camera (v2.1) unplugged and bagged. Nothing installed yet beyond the base
+  image. The card's previous contents (2023 picamera2 tutorial scripts and test images)
+  are in `captures/old_camera_card_2023/`.
+- **SD cards:** the Pi 3B's card is the one above. A second good card holds Raspberry Pi
+  OS from 2021 (Buster, desktop, HDMI forced to 1080p) — contents not inspected. A third
+  card is dead (not detected in three readers).
 - RPi 4 in an Argon ONE V2 case — sealed enclosure; whether the camera ribbon routes out of
   it cleanly is unchecked.
 - 2 × Model B Rev 2 (2012) — ARMv6, 512 MB, no Wi-Fi. Have CSI but are the wrong end of the
