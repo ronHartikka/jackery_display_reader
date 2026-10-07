@@ -150,12 +150,17 @@ Blocking, in order:
 - [ ] **Does taking the unit's Wi-Fi away bring Bluetooth back?** A MAC filter on the
       gateway, reversible. The parent project's `docs/jackery_300_plus.md` has the MAC
       recorded two ways, one of them a digit short — read it off the gateway.
-- [ ] **Focus distance.** Both camera modules are fixed focus, nominally 1 m to infinity. A
-      panel shot at 15–25 cm comes out soft, and soft seven-segment digits are exactly what
-      Tesseract fails on. Either stand back ~1 m and crop, or rotate the lens (the v1.3's
-      OV5647 is the one generally reported adjustable). **Measure the SOC digit height with
-      a ruler first** — at ~1 m both modules give ~2.6–2.7 px/mm, and Tesseract wants ~40 px
-      of digit height, so that needs digits ≥ ~15 mm.
+- [ ] **Focus distance — now a bench test of the v2.1.** Measured by Ron 2026-10-07 with a
+      ruler: whole display 26 × 45 mm; SOC digits 5 mm tall × 3 mm wide; time-to-empty
+      digits 2 mm tall × 1 mm wide. (A phone photo agrees: digit heights in ratio 2.4.)
+      The v2.1 covers ~1.2 × distance across 3280 px, so for ~40 px of digit height:
+      SOC needs ≤ ~34 cm, **time-to-empty needs ≤ ~14 cm** — the small digits set the
+      distance. At 1 m the SOC digits are only ~14 px, so standing back is out.
+      Both modules ship focused 1 m to infinity. **Correction:** the v2.1 is the one made
+      to be refocused (a lens adjustment tool exists for it); the v1.3's lens is glued and
+      Arducam warns forcing it can damage the module. Test: refocus the v2.1 at ~14 cm and
+      closer, and see how close it goes sharp. The display is so small that closer than
+      14 cm still fits the frame; the limit is the lens.
 - [ ] Standing cost of a lit display. Probably under a watt, but against a 288 Wh pack it is
       worth a number rather than a shrug.
 
