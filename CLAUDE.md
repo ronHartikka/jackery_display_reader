@@ -226,7 +226,12 @@ Design notes, not blocking:
   ~2 mm on 2026-10-08); a light-tight joint where the cover meets the base. The cover must
   lift off easily: turning on AC output undid screen always-on on 2026-10-08, so the power
   button needs pressing now and then. App showed the Jackery at 29 °C after ~1 h at 80 W
-  output, open room.
+  output, open room, and **33.9 °C just after recharging 50% → 85% at ~206 W** — charging
+  is the hot case. **Rating label** (photographed 2026-10-08): charge temperature 0–45 °C,
+  discharge −10–45 °C; LiFePO4, 22.5 Ah / 12.8 V (288 Wh), model JE-300B. Whether 45 °C
+  means room temperature or the internal temperature the app shows is not stated; if the
+  latter, charging in the open room leaves ~11 °C. Closed-box test: charge from ~50% with
+  the cover on and watch the app's temperature.
 - Rigid mounting is load-bearing. Since 2026-10-08 the boxes follow the display when it
   shifts or changes size, but **not when it rotates**: the camera is rolled ~2.5° and the
   boxes were measured with that roll; ~1° more moves the time-to-empty box ~25 px at 7 cm,
