@@ -32,6 +32,8 @@ A 2-hour run on 2026-10-08, one photo a minute, through idle, an 80 W load (84 %
 
 ## Hardware
 
+![Bench setup: the Jackery on a lathe bed, the camera on its ribbon cable held in a vise](docs/images/bench_setup.jpg)
+
 - Raspberry Pi 3 Model B (anything that runs Tesseract will do; it takes about 0.4 s per
   field on a 3B).
 - Raspberry Pi Camera Module v2.1 (IMX219). It ships focused for 1 m and beyond; its lens
