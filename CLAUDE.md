@@ -215,6 +215,16 @@ Design notes, not blocking:
   vents via black-painted baffles. Non-metal skin so Wi-Fi/Bluetooth still reach the unit.
   **Outside display:** first a web page served by the Pi (phone on the LAN), then a small
   screen on the box showing the latest raw photo of the panel.
+  **Construction** (Ron, 2026-10-08): a stiff base of ¾" hardwood plywood with everything
+  fastened to it — Jackery, camera, Pi — and a cover that comes down over it from above,
+  guided as it drops, like a cake cover. Camera-to-display alignment then depends only on
+  the base. Open points: cords (AC input, fridge output, Pi power) through grommeted holes
+  in the base rather than notches in the cover; stops or a cradle that hold the Jackery
+  against the charging cord's push (attaching it takes real force and shifted the display
+  ~2 mm on 2026-10-08); a light-tight joint where the cover meets the base. The cover must
+  lift off easily: turning on AC output undid screen always-on on 2026-10-08, so the power
+  button needs pressing now and then. App showed the Jackery at 29 °C after ~1 h at 80 W
+  output, open room.
 - Rigid mounting is load-bearing: if the camera shifts, every region of interest breaks.
 - A shroud is needed against glare on the panel.
 - Ron has hobby servos. A bracket the Jackery sits in is preferred over anything glued to
