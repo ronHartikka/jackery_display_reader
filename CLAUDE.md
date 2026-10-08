@@ -227,7 +227,7 @@ Design notes, not blocking:
   lift off easily: turning on AC output undid screen always-on on 2026-10-08, so the power
   button needs pressing now and then. App showed the Jackery at 29 °C after ~1 h at 80 W
   output, open room, and **33.9 °C just after recharging 50% → 85% at ~206 W** — charging
-  is the hot case. **Rating label** (photographed 2026-10-08): charge temperature 0–45 °C,
+  is the hot case. **Rating label** (`docs/images/rating_label.jpg`, 2026-10-08): charge temperature 0–45 °C,
   discharge −10–45 °C; LiFePO4, 22.5 Ah / 12.8 V (288 Wh), model JE-300B. Whether 45 °C
   means room temperature or the internal temperature the app shows is not stated; if the
   latter, charging in the open room leaves ~11 °C. Closed-box test: charge from ~50% with
