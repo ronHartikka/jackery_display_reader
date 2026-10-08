@@ -27,7 +27,9 @@ FIELDS = {
     "input_watts":   (( 980,  955, 1235, 1070), 120),  # 3 digits + W
     "time_to_full":  ((1000, 1070, 1230, 1160),  45),  # shown only while charging
     "output_watts":  ((1760, 1005, 2085, 1105), 120),  # right-aligned; room for 3 digits + W
-    "time_to_empty": ((1840, 1110, 2085, 1205),  45),  # shows 99.9H while charging
+    "time_to_empty": ((1840, 1110, 2025, 1205),  45),  # H left out (with it, "1.8H" read
+                                                       # as "LOH"); right-aligned, so the H
+                                                       # stays put; 99.9 while charging
 }
 
 # Outline of the lit blue parts of the display (Wi-Fi icon to time-to-empty) in the photos
