@@ -15,3 +15,6 @@ venv/
 
 # Tesseract models are downloaded, not versioned (about 11 MB each).
 tessdata/*.traineddata
+
+# Pictures used by the README.
+!docs/images/*.jpg
