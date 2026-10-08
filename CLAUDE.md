@@ -227,7 +227,13 @@ Design notes, not blocking:
   lift off easily: turning on AC output undid screen always-on on 2026-10-08, so the power
   button needs pressing now and then. App showed the Jackery at 29 °C after ~1 h at 80 W
   output, open room.
-- Rigid mounting is load-bearing: if the camera shifts, every region of interest breaks.
+- Rigid mounting is load-bearing. Since 2026-10-08 the boxes follow the display when it
+  shifts or changes size, but **not when it rotates**: the camera is rolled ~2.5° and the
+  boxes were measured with that roll; ~1° more moves the time-to-empty box ~25 px at 7 cm,
+  past its margin. Hold roll to within ~0.5°. Automatic rotation correction (measure the
+  roll from the SOC digits' top edges, turn the photo level) was offered and deferred —
+  Ron may make the camera mount adjustable instead. Next step (Ron, 2026-10-08): a
+  prototype box to work out holding the Jackery and the camera in place.
 - A shroud is needed against glare on the panel.
 - Ron has hobby servos. A bracket the Jackery sits in is preferred over anything glued to
   the case.
