@@ -180,8 +180,10 @@ Blocking, in order:
       tuned (`src/read_fields.py`); over the run's 180 frames SOC was right in all 180,
       time-to-empty wrong in 19 (8 read as 9). See `docs/ocr_results.md`.
       Photos: `~/run_2026_10_07/` on the Pi.
-      Not yet done: depth-of-field sweep around 10 cm; a printed-text check for the
-      possible scratch.
+      **2026-10-08: the lens is focused near 7 cm, not 10.** A 5–9 cm sweep read every
+      field at 6–9 cm; 7 cm sharpest. A 2-hour run at 7 cm through idle, an 80 W load and a
+      recharge: 1 wrong value and 3 blanks in 670 readings. **Use 7 cm.** See
+      `docs/ocr_results.md`. Not yet done: a printed-text check for the possible scratch.
 - [ ] Standing cost of a lit display. Probably under a watt, but against a 288 Wh pack it is
       worth a number rather than a shrug.
 

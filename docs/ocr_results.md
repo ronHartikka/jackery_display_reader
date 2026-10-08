@@ -65,3 +65,33 @@ Script changes found by the sweep, each checked against the 180 frames of 2026-1
 
 With those, the 2026-10-07 frames score: SOC, input and output right in 180 of 180,
 time-to-full wrong in 1, time-to-empty wrong in 13 (was 19).
+
+## 2026-10-08 — run at 7 cm: idle, 80 W load, recharge
+
+Camera 7 cm from the display (lens unchanged), room dark, basement window above the camera
+covered. One photo a minute, 12:20 to 14:34, 135 photos in `captures/run_2026_10_08/`
+(git-ignored); readings in `ocr_run_2026_10_08.csv`. Script as committed at this point:
+boxes follow the display, crops scaled to the 10 cm size, segments thickened, H left out
+of the time-to-empty box.
+
+What happened (Ron's times, approximate): idle at 84% until AC input unplugged ~12:30 and an
+80 W slow cooker plugged in ~12:32; output read 81–82 W and SOC fell 84% → 50% by 13:33
+(time-to-empty 2.4H → 1.5H); cooker off ~13:33 (time-to-empty jumped to 22.4H); AC input
+back ~13:39 — the plug takes real force and shifted the display ~2 mm, which the boxes
+followed; charged at 206–207 W, 50% → 85% by 14:12 (time to full 0.9H → 0.4H); idle 85%,
+47.8H after.
+
+| | photos | wrong value | blank (failed read) |
+|---|---|---|---|
+| all fields | 134 (12:31 excluded: room light on) | 1 — output 81 read as 811 at 12:55 | 3 — time-to-empty at 13:14, 13:45, 14:23 |
+
+The digit 8 — the failure at 10 cm — read right everywhere (47.8, 1.8, 0.8, SOC 58/68/78/80).
+SOC skipped 62→64 and 81→83 while charging: at just over 1%/minute with one photo a minute,
+that is expected, not a misread.
+
+Found and fixed during the run: with the H inside the box, time-to-empty below 2 hours read
+"1.9H" and "1.8H" as "LOH" — the thickened "1" merged with the decimal point. Leaving the H
+out fixed it and also improved the 10 cm frames of 2026-10-07 (time-to-empty 13 wrong → 5).
+
+Temperature (Jackery app, open room): 29 °C after ~1 h at 80 W output; 33.9 °C just after
+recharging at ~206 W. Charging is the hotter case for the enclosure.
