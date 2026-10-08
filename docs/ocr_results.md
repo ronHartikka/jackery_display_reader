@@ -31,3 +31,37 @@ Time: 900 field reads in 7 s on the Mac (8 at a time). About 0.4 s per field on 
 
 Next, for the small fields: sharpen focus on that side of the display or move 2–3 mm, then
 if needed check each segment's fixed pixel position for lit/unlit instead of Tesseract.
+
+## 2026-10-08 — distance sweep, lens unchanged
+
+Lens left as turned on 2026-10-07. Camera re-aimed slightly after Ron stabilised it.
+Distance is lens face to display face. 5 frames at each distance, dark room; display
+showing SOC 84%, input 0W, output 1W or 0W, time-to-empty 47.2H. Photos in
+`captures/bench_2026_10_08/` (git-ignored), named by distance in mm.
+
+| distance | frames with every field right | look of the small digits |
+|---|---|---|
+| 5 cm | 4 of 5 (one 47.2 read as 447.2) | softer, glow spreading |
+| 6 cm | 5 of 5 | sharp |
+| 7 cm | 5 of 5 | sharpest |
+| 8 cm | 5 of 5 | slightly softer |
+| 9 cm | 5 of 5 | softer |
+| 10 cm (2026-10-07) | time-to-empty ~93% | blurry |
+
+**The lens is focused near 7 cm.** That is why 10 cm was soft: 3 cm past focus.
+Caveat: 5 frames each, and 47.2 contains no 8 — the digit that failed at 10 cm.
+
+Room light ruins the small fields: with a basement light on, its reflection in the display
+glass made time-to-empty and time-to-full unreadable at 5 and 8 cm (`d50_*`, `d80_*`;
+reshot dark as `d50b_*`, `d80b_*`). The enclosure needs to keep light off the glass.
+
+Script changes found by the sweep, each checked against the 180 frames of 2026-10-07:
+- Boxes follow the display: each photo's outline is found and the boxes shifted and scaled.
+- Each crop is scaled to its 10 cm size before OCR, so digit size does not change with
+  distance.
+- Segments thickened by a pixel each way before OCR. Without it Tesseract read nothing at
+  7 cm, where the gaps between segments are sharp.
+- Specks under 5 px are ignored when finding the outline (they threw it off in 3 frames).
+
+With those, the 2026-10-07 frames score: SOC, input and output right in 180 of 180,
+time-to-full wrong in 1, time-to-empty wrong in 13 (was 19).
