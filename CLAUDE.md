@@ -232,6 +232,14 @@ Design notes, not blocking:
   means room temperature or the internal temperature the app shows is not stated; if the
   latter, charging in the open room leaves ~11 °C. Closed-box test: charge from ~50% with
   the cover on and watch the app's temperature.
+- **Alternative to the box: a hood** (Ron, 2026-10-09), like old oscilloscope cameras — a
+  3D-printed shroud joining the camera module to the display and keeping light out. Ron
+  judges it too complex for him; recorded for others. Gains: the Jackery stays in open air
+  (no ventilation problem), camera is held to the display itself, small and shareable as a
+  print file. Must handle: attachment without glue (clip or strap), leaving the power and
+  light buttons beside the display reachable, and stray reflection — matte black ribbed
+  or flocked interior, and a black plate around the lens so the camera board does not
+  reflect in the display glass (that last point applies to the box too).
 - Rigid mounting is load-bearing. Since 2026-10-08 the boxes follow the display when it
   shifts or changes size, but **not when it rotates**: the camera is rolled ~2.5° and the
   boxes were measured with that roll; ~1° more moves the time-to-empty box ~25 px at 7 cm,
