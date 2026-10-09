@@ -103,6 +103,25 @@ point here.
 Reading works. Not yet built: the light-tight enclosure, checks that reject impossible
 readings, and the link into the logger of the parent project that uses the readings.
 
+## Wanted: a 3D-printed hood
+
+The plan here is a plywood box around the Jackery and camera. A neater answer, if you
+have a 3D printer, is a hood like the old oscilloscope cameras had: a printed shroud that
+holds the camera module 7 cm from the display and keeps light out. The Jackery would stay
+in open air, so there is no ventilation problem, and the camera could not shift relative
+to the display.
+
+What it would need:
+
+- Attach to the front panel without glue: a clip or a strap.
+- Leave the power and light buttons beside the display reachable.
+- A matte black inside (ribbed, textured or flocked) and a black plate around the lens,
+  so neither the hood nor the camera board reflects in the display glass.
+- Hold the camera's rotation steady: the reader follows the display when it shifts or
+  changes size, but not when it rotates.
+
+If you design one, please open an issue or a pull request.
+
 ## License
 
 MIT — see [LICENSE](LICENSE). The Jackery user manual is not included; see
