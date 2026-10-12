@@ -68,3 +68,9 @@ Jackery plugged into the wall at ~14:08, no load on any output, Battery Save on.
 A double click of the power button keeps the screen lit. Checked by photographing the
 panel once a minute from 14:09 to 17:08 after a double click: lit in all 180 frames, longer
 than the app's 2-hour timeout. One run; whether it survives a power cut is not known.
+
+## Always-on survives losing AC input (2026-10-12)
+
+With the screen in always-on (double click of power) and the fridge on the AC output, Ron
+pulled the Jackery's AC input briefly, twice. The screen stayed on both times. (Turning on
+AC output, by contrast, undid always-on on 2026-10-08.)
