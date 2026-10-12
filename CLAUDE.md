@@ -147,7 +147,10 @@ Blocking, in order:
       (blue-pixel count never below 96,519; dark reads near 0) — over 3 hours, longer than
       the app's 2-hour setting, nothing touched. **2026-10-12: it survived two brief cuts of the
       AC input** (fridge running on the output). Not yet known: whether it survives the unit's
-      own restart. Turning on AC output did undo it on 2026-10-08.
+      own restart — Ron expects not (untested), so after a shutdown in an outage someone must
+      double-click power again. The reader reports "dark" when no lit display is found; make
+      that an alarm ("screen off — double-click power"), not something to remember. Turning
+      on AC output did undo it on 2026-10-08.
 - [ ] **Does the screen stay lit long enough to photograph on a schedule?** Measure the
       current timeout by observation: wake it, note which button, time how long until dark.
       **2 hours** makes a wake actuator a convenience; **2 minutes** makes it the
