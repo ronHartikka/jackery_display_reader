@@ -251,6 +251,7 @@ Design notes, not blocking:
   roll from the SOC digits' top edges, turn the photo level) was offered and deferred —
   Ron may make the camera mount adjustable instead. Next step (Ron, 2026-10-08): a
   prototype box to work out holding the Jackery and the camera in place.
+  Dimensions and mount decisions: `docs/enclosure_design.md`.
 - A shroud is needed against glare on the panel.
 - Ron has hobby servos. A bracket the Jackery sits in is preferred over anything glued to
   the case.
